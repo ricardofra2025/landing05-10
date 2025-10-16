@@ -1,0 +1,272 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 240 20% 12%;
+
+    --card: 0 0% 95%;
+    --card-foreground: 240 20% 12%;
+
+    --popover: 0 0% 95%;
+    --popover-foreground: 240 20% 12%;
+
+    --primary: 142 84% 55%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 25 95% 53%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 10% 85%;
+    --muted-foreground: 240 20% 35%;
+
+    --accent: 142 84% 55%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 10% 85%;
+    --input: 240 10% 85%;
+    --ring: 142 84% 55%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image: linear-gradient(135deg, rgba(0, 204, 102, 0.03) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(51, 51, 51, 0.03) 100%);
+    -webkit-tap-highlight-color: transparent;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Better text wrapping for all elements */
+  h1, h2, h3, h4, h5, h6, p, span, div, a, li {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* Prevent horizontal overflow */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Neon text effect with Ethra colors */
+  .text-neon-ethra {
+    text-shadow: 0 0 5px rgba(0, 204, 102, 0.7), 0 0 10px rgba(0, 204, 102, 0.5);
+  }
+  
+  /* Glowing border effect with Ethra colors */
+  .border-glow-ethra {
+    box-shadow: 0 0 5px rgba(0, 204, 102, 0.6), 0 0 10px rgba(0, 204, 102, 0.4);
+  }
+  
+  /* Glass effect for Ethra */
+  .glass-card-ethra {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 204, 102, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Gradient text with Ethra colors */
+  .gradient-text-ethra {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #00cc66 0%, #333333 100%);
+  }
+
+  /* WhatsApp button hover effect */
+  .whatsapp-button {
+    transition: all 0.3s ease;
+  }
+
+  /* Improved touch target sizes for mobile */
+  @media (max-width: 640px) {
+    button, 
+    a, 
+    [role="button"],
+    input[type="submit"],
+    input[type="button"] {
+      @apply min-h-[44px] touch-manipulation;
+    }
+    
+    /* Better mobile text sizing */
+    h1 {
+      @apply text-2xl leading-tight;
+    }
+    
+    h2 {
+      @apply text-xl leading-tight;
+    }
+    
+    h3 {
+      @apply text-lg leading-tight;
+    }
+    
+    p {
+      @apply text-sm leading-relaxed;
+    }
+    
+    /* Prevent text overflow on small screens */
+    .container {
+      @apply px-4;
+    }
+  }
+
+  /* Improved focus styles for accessibility */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    @apply outline-none ring-2 ring-ethra-green ring-offset-2 ring-offset-background;
+  }
+  
+  .whatsapp-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 204, 102, 0.3);
+  }
+  
+  /* Prevent text size adjustment on orientation change */
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Section transitions */
+  section {
+    @apply transition-opacity duration-500 ease-in-out;
+  }
+
+  /* Better interactive elements */
+  .interactive {
+    @apply transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+  
+  /* Ensure images don't overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer utilities {
+  /* New animation: subtle pulse */
+  @keyframes pulse-subtle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+  
+  .animate-pulse-subtle {
+    animation: pulse-subtle 3s infinite ease-in-out;
+  }
+  
+  /* Enhanced float animation */
+  @keyframes enhanced-float {
+    0%, 100% {
+      transform: translateY(0) rotate(0);
+    }
+    25% {
+      transform: translateY(-5px) rotate(1deg);
+    }
+    75% {
+      transform: translateY(-8px) rotate(-1deg);
+    }
+  }
+  
+  .animate-enhanced-float {
+    animation: enhanced-float 6s infinite ease-in-out;
+  }
+  
+  /* Mobile optimizations */
+  .touch-feedback:active {
+    @apply opacity-70 transition-opacity duration-150;
+  }
+
+  /* Responsive text utilities */
+  .break-words {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* Prevent content overflow */
+  .prevent-overflow {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-pulse-subtle,
+    .animate-enhanced-float,
+    .animate-float,
+    .animate-bounce,
+    .animate-pulse {
+      animation: none !important;
+    }
+    
+    .whatsapp-button:hover {
+      transform: none !important;
+    }
+    
+    * {
+      transition-duration: 0.01ms !important;
+    }
+    
+    html {
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* Enhanced accessibility classes */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  /* Soft shadow effect */
+  .shadow-soft {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  }
+}

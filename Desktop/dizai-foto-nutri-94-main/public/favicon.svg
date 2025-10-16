@@ -1,0 +1,15 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Folha verde principal -->
+  <path d="M16 2C16 2 8 8 8 16C8 24 16 30 16 30C16 30 24 24 24 16C24 8 16 2Z" fill="#8BA675"/>
+  
+  <!-- Veios da folha -->
+  <path d="M16 2L16 30" stroke="#7CA565" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M12 8L20 8" stroke="#7CA565" stroke-width="1" stroke-linecap="round"/>
+  <path d="M11 12L21 12" stroke="#7CA565" stroke-width="1" stroke-linecap="round"/>
+  <path d="M10 16L22 16" stroke="#7CA565" stroke-width="1" stroke-linecap="round"/>
+  <path d="M11 20L21 20" stroke="#7CA565" stroke-width="1" stroke-linecap="round"/>
+  <path d="M12 24L20 24" stroke="#7CA565" stroke-width="1" stroke-linecap="round"/>
+  
+  <!-- Destaque no centro -->
+  <circle cx="16" cy="16" r="2.5" fill="#7CA565"/>
+</svg>
